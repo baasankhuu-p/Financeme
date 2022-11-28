@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!--Body Start-->
+<!--Body End-->
+
+<VBox fx:id="body_vbx" alignment="TOP_CENTER" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" spacing="10.0" styleClass="bgVbx" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finance.Users">
+   <children>
+      <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="74.0" prefWidth="1280.0" styleClass="headerVbx">
+         <children>
+            <HBox fx:id="noteBtn" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="600.0" spacing="15.0" styleClass="Header_left">
+               <children>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#noteClick" prefHeight="30.0" styleClass="noteBtn" text="ТЭМДЭГЛЭЛ">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Button>
+                  <ComboBox fx:id="filterTypeCmbx" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#filterTypeClick" prefHeight="30.0" promptText="ШҮҮХ" styleClass="filtersCmbx">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></ComboBox>
+                  <Button fx:id="settngsBtn" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#settngsClick" prefHeight="30.0" styleClass="settingsBtn" text="ТОХИРГОО">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Button>
+                  <Button fx:id="exitBtn" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#exitClick" prefHeight="30.0" styleClass="exitBtn" text="ГАРАХ">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="74.0" prefWidth="600.0" spacing="15.0" styleClass="Header_right">
+               <children>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" styleClass="countInfoLbl" text="Нийт 10ш" />
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="profileImg">
+                     <image>
+                        <Image url="@../img/profile.png" />
+                     </image>
+                  </ImageView>
+                  <ComboBox fx:id="name_cmbx" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" promptText="******" styleClass="profileCmbx">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></ComboBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1280.0" spacing="15.0" styleClass="contentVbx">
+         <children>
+            <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="55.0" prefWidth="1280.0" styleClass="filterVbx">
+               <children>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="500.0" spacing="10.0">
+                     <children>
+                        <ComboBox maxWidth="-Infinity" prefHeight="25.0" promptText="07" styleClass="filterCmbx">
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <Button mnemonicParsing="false" prefHeight="25.0" styleClass="filterBtn" text="ШҮҮХ">
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="500.0">
+                     <children>
+                        <Label prefHeight="25.0" text="2,000,000">
+                           <styleClass>
+                              <String fx:value="calLbl" />
+                              <String fx:value="activeLbl" />
+                           </styleClass>
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="35.0" styleClass="calLbl" text="-">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="25.0" text="2,000,000">
+                           <styleClass>
+                              <String fx:value="calLbl" />
+                              <String fx:value="passiveLbl" />
+                           </styleClass>
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="35.0" styleClass="calLbl" text="=">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="25.0" text="0">
+                           <styleClass>
+                              <String fx:value="calLbl" />
+                              <String fx:value="outputLbl" />
+                           </styleClass>
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="49.0" spacing="20.0" styleClass="inputVbx">
+               <children>
+                  <DatePicker fx:id="dpckr" maxHeight="20.0" maxWidth="-Infinity" minHeight="20.0" minWidth="-Infinity" prefHeight="20.0" prefWidth="120.0" promptText="ОГНОО" />
+                  <CheckBox fx:id="const_cbx" maxHeight="20.0" minHeight="20.0" mnemonicParsing="false" prefHeight="20.0" />
+                  <TextField fx:id="constumer_txt" alignment="CENTER" maxHeight="-Infinity" maxWidth="89.0" minHeight="-Infinity" prefHeight="20.0" promptText="ХАРИЛЦАГЧ" />
+                  <StackPane maxWidth="-Infinity">
+                     <children>
+                        <TextField fx:id="moneyplus_txt" alignment="CENTER" maxHeight="-Infinity" maxWidth="89.0" minHeight="-Infinity" prefHeight="20.0" promptText="МӨНГӨ" />
+                        <ImageView fitHeight="15.0" fitWidth="15.0" opacity="0.99" pickOnBounds="true" preserveRatio="true" translateX="30.0">
+                           <image>
+                              <Image url="@../img/Arrow-plus.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <StackPane maxWidth="-Infinity">
+                     <children>
+                        <TextField fx:id="moneysub_txt" alignment="CENTER" maxHeight="-Infinity" maxWidth="89.0" minHeight="-Infinity" prefHeight="20.0" promptText="МӨНГӨ" />
+                        <ImageView fitHeight="15.0" fitWidth="15.0" opacity="0.99" pickOnBounds="true" preserveRatio="true" translateX="30.0">
+                           <image>
+                              <Image url="@../img/Arrow-sub.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <StackPane maxWidth="-Infinity">
+                     <children>
+                        <TextField fx:id="debtplus_txt" alignment="CENTER" maxHeight="-Infinity" maxWidth="89.0" minHeight="-Infinity" prefHeight="20.0" promptText="ӨР" />
+                        <ImageView fitHeight="15.0" fitWidth="15.0" opacity="0.99" pickOnBounds="true" preserveRatio="true" translateX="30.0">
+                           <image>
+                              <Image url="@../img/Arrow-plus.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <StackPane maxWidth="-Infinity">
+                     <children>
+                        <TextField fx:id="debtsub_txt" alignment="CENTER" maxHeight="-Infinity" maxWidth="89.0" minHeight="-Infinity" prefHeight="20.0" promptText="ӨР" />
+                        <ImageView fitHeight="15.0" fitWidth="15.0" opacity="0.99" pickOnBounds="true" preserveRatio="true" translateX="30.0">
+                           <image>
+                              <Image url="@../img/Arrow-sub.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <StackPane maxWidth="-Infinity">
+                     <children>
+                        <TextField fx:id="receivableplus_txt" alignment="CENTER" maxHeight="-Infinity" maxWidth="89.0" minHeight="-Infinity" prefHeight="20.0" promptText="АВЛАГА" />
+                        <ImageView fitHeight="15.0" fitWidth="15.0" opacity="0.99" pickOnBounds="true" preserveRatio="true" translateX="30.0">
+                           <image>
+                              <Image url="@../img/Arrow-plus.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <StackPane maxWidth="-Infinity">
+                     <children>
+                        <TextField fx:id="receivablesub_txt" alignment="CENTER" maxHeight="-Infinity" maxWidth="89.0" minHeight="-Infinity" prefHeight="20.0" promptText="АВЛАГА" />
+                        <ImageView fitHeight="15.0" fitWidth="15.0" opacity="0.99" pickOnBounds="true" preserveRatio="true" translateX="30.0">
+                           <image>
+                              <Image url="@../img/Arrow-sub.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <StackPane maxWidth="-Infinity">
+                     <children>
+                        <TextField fx:id="income_txt" alignment="CENTER" maxHeight="-Infinity" maxWidth="89.0" minHeight="-Infinity" prefHeight="20.0" promptText="ОРЛОГО" />
+                     </children>
+                  </StackPane>
+                  <StackPane maxWidth="-Infinity">
+                     <children>
+                        <TextField fx:id="expense_txt" alignment="CENTER" maxHeight="-Infinity" maxWidth="89.0" minHeight="-Infinity" prefHeight="20.0" promptText="ЗАРДАЛ" />
+                     </children>
+                  </StackPane>
+                  <ImageView fx:id="save_img" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#save_click" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/save.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </ImageView>
+               </children></HBox>
+            <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="485.0" prefWidth="1280.0" styleClass="outputVbx">
+               <children>
+                  <GridPane fx:id="data_grdpn" hgap="19.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" vgap="17.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="89.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="89.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="89.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="89.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="89.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="89.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="89.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="89.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="89.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

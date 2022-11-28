@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+/* Стандарт хэмжээс болон өнгүүд -> Тогтмол ашиглах утгуудаа хувьсагчид хадгалж өгөөд class,id-үүдэд дуудаж ашиглана*/
+/* Давуу тал Өөрчлөхөд хялбар, алдаа гарахгүй */
+
+*{
+    -fx-font-default-family: 'Montserrat', sans-serif;
+    -fx-background-default: rgba(33, 72, 192, 1);
+    -fx-blue: rgba(0, 0, 255, 0.69);
+    -fx-default-white: rgba(255, 255, 255, 1);
+    -fx-default-black: rgba(0, 0, 0, 1);
+    -fx-default-green: rgba(68, 250, 87, 0.5);
+    -fx-default-grey: rgba(217, 217, 217, 0.3);
+    -fx-default-brown: rgba(69, 69, 69, 1);
+
+    -fx-default-red: rgba(192, 33, 33, 0.5);
+    -fx-default-blue: rgba(33, 72, 192, 1);
+    -fx-dim-blue: rgba(103, 100, 255, 1);
+    -fx-default-azure: rgba(103, 100, 255, 1);
+
+    -fx-default-white-blur: rgba(255, 255, 255, 0.5);
+    -fx-default-red-blur: rgba(192, 33, 33, 0.71);
+    -fx-default-green-blur: rgba(68, 250, 87, 0.5);
+    -fx-default-black-blur: rgba(0, 0, 0, 0.5);
+    -fx-default-blue-blur: rgba(217, 217, 217, 0.3);
+    -fx-default-azure-blur: rgba(103, 109, 255, 0.59);
+    -fx-default-brown-blur: rgba(68, 250, 87, 0.5);
+    -fx-default-blue-hover: rgba(39, 79, 199, 1);
+}
+
+.bg{
+    -fx-background-image: url("../img/background.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.userType{
+    -fx-font-family: -fx-font-default-family;
+    -fx-text-fill: -fx-default-white;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+#form-in>*,
+#form-up>*
+{
+    -fx-border-radius: 5px;
+}
+
+.form_lbl{
+    -fx-background-color: none;
+    -fx-text-fill: -fx-default-white;
+    -fx-border-color: -fx-default-white;
+    -fx-border-width: 1px;
+}
+
+#form-in>.signin_btn{
+    -fx-background-color: -fx-default-white;
+    -fx-text-fill: -fx-default-blue;
+    -fx-font-weight: bold;
+}
+
+#form-up>.signin_btn{
+    -fx-background-color: -fx-default-blue-hover;
+    -fx-text-fill: -fx-default-white;
+    -fx-font-weight: bold;
+}
+
+#form-in>.signup_btn{
+    -fx-background-color: -fx-default-blue-hover;
+    -fx-text-fill: -fx-default-white;
+    -fx-font-weight: bold;
+}
+
+#form-up>.signup_btn{
+    -fx-background-color: -fx-default-white;
+        -fx-text-fill: -fx-default-blue;
+    -fx-font-weight: bold;
+}
+
+#form-up>.signup_btn:hover,
+#form-up>.signin_btn:hover,
+#form-in>.signup_btn:hover,
+#form-in>.signin_btn:hover
+{
+    -fx-background-color: -fx-default-black-blur;
+    -fx-text-fill: -fx-default-white;
+}
+
+.forgetlbl{
+    -fx-text-fill: -fx-default-white;
+    -fx-font-weight: bold;
+}
+
+/*********************************************Profile page css*********************************************/
+.bgVbx{
+    -fx-background-color: -fx-background-default;
+    -fx-background-size: 100% 100%;
+}
+.headerVbx{
+    -fx-background-color: -fx-default-blue-blur;
+}
+
+.noteBtn{
+    -fx-font-family: -fx-font-default-family;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-background-color: -fx-default-green-blur;
+    -fx-text-fill: -fx-default-white;
+    -fx-background-radius: 10px;
+
+}
+
+.filtersCmbx, .filtersCmbx .list-cell{
+    -fx-font-family: -fx-font-default-family;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-background-color: -fx-default-blue;
+    -fx-text-fill: -fx-default-white;
+    -fx-background-radius: 10px;
+}
+
+.settingsBtn{
+    -fx-font-family: -fx-font-default-family;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-background-color: -fx-default-blue;
+    -fx-text-fill: -fx-default-white;
+    -fx-background-radius: 10px;
+}
+
+.exitBtn{
+    -fx-font-family: -fx-font-default-family;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-background-color: -fx-default-red-blur;
+    -fx-text-fill: -fx-default-white;
+    -fx-background-radius: 10px;
+}
+
+.countInfoLbl{
+    -fx-font-family: -fx-font-default-family;
+    -fx-font-size: 13px;
+    -fx-padding: 0 10px 0 10px;
+    -fx-font-weight: 700;
+    -fx-border-color: -fx-dim-blue;
+    -fx-text-fill: -fx-default-blue;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+.profileImg{
+    -fx-border-radius: 20px;
+    -fx-background-radius: 10px;
+}
+
+.profileCmbx, .profileCmbx .list-cell{
+    -fx-font-family: -fx-font-default-family;
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-background-color: -fx-default-grey;
+    -fx-text-fill: -fx-default-white;
+    -fx-background-radius: 10px;
+}
+
+.filterVbx{
+    -fx-background-color: -fx-default-white-blur;
+}
+
+.filterCmbx, .filterCmbx .list-cell, .filterBtn{
+   -fx-font-family: -fx-font-default-family;
+   -fx-font-size: 13px;
+   -fx-font-weight: 700;
+   -fx-background-color: -fx-default-black;
+   -fx-text-fill: -fx-default-white;
+   -fx-background-radius: 10px;
+}
+
+.activeLbl{
+   -fx-font-family: -fx-font-default-family;
+   -fx-font-size: 12px;
+   -fx-font-weight: 700;
+   -fx-text-fill: -fx-default-green;
+   -fx-background-color: -fx-default-brown;
+   -fx-background-radius: 20px;
+   -fx-border-radius: 10px;
+   -fx-border-color: -fx-default-green;
+}
+
+.passiveLbl{
+   -fx-font-family: -fx-font-default-family;
+   -fx-font-size: 12px;
+   -fx-font-weight: 700;
+   -fx-text-fill: -fx-default-red;
+   -fx-background-color: -fx-default-brown-blur;
+   -fx-background-radius: 20px;
+   -fx-border-radius: 10px;
+   -fx-border-color: -fx-default-red;
+}
+
+.outputLbl{
+   -fx-font-family: -fx-font-default-family;
+   -fx-font-size: 12px;
+   -fx-font-weight: 700;
+   -fx-text-fill: -fx-default-green;
+   -fx-background-color: -fx-default-brown;
+   -fx-background-radius: 20px;
+   -fx-border-radius: 10px;
+   -fx-border-color: -fx-default-green;
+}
+
+.inputVbx, .outputVbx{
+    -fx-background-color: -fx-default-azure-blur;
+}
