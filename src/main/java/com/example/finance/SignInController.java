@@ -60,7 +60,7 @@ public class SignInController {
         // Хэрэглэгч формыг бөглөх ёстой
         if(!passTxt.getText().trim().equals("") && !nameTxt.getText().equals("")){
 
-            //database signUp check code..
+            //Хэрэглэгч амжилттай нэвтэрсэн эсэх
             int i_msgType = Database.signInDB(
                     s_userType,
                     nameTxt.getText(),
@@ -70,6 +70,12 @@ public class SignInController {
             // 1. Хэрэглэгч амжилттай нэвтэрлээ, 2. Мэдээлэл буруу байна 3. Алдаа гарлаа
             switch (i_msgType){
                 case 1:
+                    //Хэрэглэгч амжилттай нэвтэрсэн бол хэрэглэгчийн дугаарыг буцаадаг байна
+                    int i_uid = Database.returnUserId(
+                            s_userType,
+                            nameTxt.getText(),
+                            passTxt.getText()
+                    );
                     //msg хүмүүсд харуулах
                     fnc.successMsg(msgLbl,"Амжилттай");
 
@@ -89,7 +95,7 @@ public class SignInController {
                         // Logo
                         stage.getIcons().add(new Image(this.getClass().getResourceAsStream("img/logo.png")));
                         // Нэрний эхнийх нь том байх нь зохимжтой
-                        stage.setTitle("" +12+") "+" Finance - Сайн уу "+name);
+                        stage.setTitle("" +i_uid+") "+" Finance - Сайн уу "+name);
 
                         stage.setScene(scene);
                         stage.show();

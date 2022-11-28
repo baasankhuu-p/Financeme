@@ -50,10 +50,6 @@ public class Users {
     private Button settngsBtn;
 
     @FXML
-    private void initilize(){
-    }
-
-    @FXML
     private GridPane data_grdpn;
 
     @FXML
@@ -71,6 +67,7 @@ public class Users {
         String[] s_arr = this.stage.getTitle().replace(")","").split(" ");
         String s_id, s_name;
         s_id = s_arr[0];
+        // Өгөгдийг унших
         Database.getData(Integer.parseInt(s_id));
         s_name = s_arr[6];
         name_cmbx.setPromptText(s_name);
