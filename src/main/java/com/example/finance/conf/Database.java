@@ -186,6 +186,7 @@ public class Database {
                         typeCheck.getInt(9) + " | " +
                         typeCheck.getInt(10) + " | " +
                         typeCheck.getInt(11));
+
                 //өгөгдлийг нэг контролд хадгалах хэрэгтэй
             }
         } catch (SQLException ex) {
@@ -199,8 +200,49 @@ public class Database {
         String s_id = "select userid from users where userid = ? and name = ?";
         String s_data = "select * from users where userid = ?";
     }
-    public static void saveData() {
+    public static void saveData(String[] row,int userid) {
+        String createQuery = "insert into usersdata(" +
+                "ognoo, " +
+                "togtmol, " +
+                "hariltsagch, " +
+                "mungu_usuh, " +
+                "mungu_buurah, " +
+                "ur_usuh, " +
+                "ur_buurah, " +
+                "avlaga_usuh, " +
+                "avlaga_buurah," +
+                "orlogo," +
+                "zardal," +
+                "userid ) " +
+                "values(? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)";
+        try (Connection con = DriverManager.getConnection(url, db, postgrePas)
+        ) {
+            PreparedStatement prepStmt;
+            // Нэг грүппийг нэг л админ удирдах ёстой
+            prepStmt = con.prepareStatement(createQuery);
+            prepStmt.setDate(1, Date.valueOf(row[0]));
+            prepStmt.setByte(2, Byte.parseByte(row[1]));
+            prepStmt.setString(3, row[2]);
+            prepStmt.setInt(4, Integer.parseInt(row[3]));
+            prepStmt.setInt(5, Integer.parseInt(row[4]));
+            prepStmt.setInt(6, Integer.parseInt(row[5]));
+            prepStmt.setInt(7, Integer.parseInt(row[6]));
+            prepStmt.setInt(8, Integer.parseInt(row[7]));
+            prepStmt.setInt(9, Integer.parseInt(row[8]));
+            prepStmt.setInt(10, Integer.parseInt(row[9]));
+            prepStmt.setInt(11, Integer.parseInt(row[10]));
+            prepStmt.setInt(12, userid);
+            prepStmt.executeUpdate();
 
+            //db-г хаах хэрэгтэй
+            con.close();
+
+            Database.getData(userid);
+        } catch (SQLException ex) {
+            // Log-руу бичиж буй байдал
+            Logger lgr = Logger.getLogger(Database.class.getName());
+            lgr.log(Level.SEVERE, ex.getMessage(), ex);
+        }
     }
     public static void updateData() {
 
