@@ -31,7 +31,7 @@
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor></Button>
-                  <ComboBox fx:id="filterTypeCmbx" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#filterTypeClick" prefHeight="30.0" promptText="ШҮҮХ" styleClass="filtersCmbx">
+                  <ComboBox fx:id="filterTypeCmbx" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#filterTypeAction" prefHeight="30.0" promptText="ШҮҮХ" styleClass="filtersCmbx">
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor></ComboBox>
@@ -67,7 +67,7 @@
                <children>
                   <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="500.0" spacing="10.0">
                      <children>
-                        <ComboBox maxWidth="-Infinity" prefHeight="25.0" promptText="07" styleClass="filterCmbx">
+                        <ComboBox fx:id="filterOnecmbx" maxWidth="-Infinity" prefHeight="25.0" promptText="2023" styleClass="filterCmbx">
                            <cursor>
                               <Cursor fx:constant="OPEN_HAND" />
                            </cursor>
@@ -122,7 +122,8 @@
                   </HBox>
                </children>
             </HBox>
-            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="49.0" spacing="20.0" styleClass="inputVbx">
+            <Label fx:id="msgLbl" alignment="CENTER" maxWidth="1.7976931348623157E308" />
+            <HBox fx:id="inputHbx" alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="49.0" spacing="20.0" styleClass="inputVbx">
                <children>
                   <DatePicker fx:id="dpckr" maxHeight="20.0" maxWidth="-Infinity" minHeight="20.0" minWidth="-Infinity" prefHeight="20.0" prefWidth="120.0" promptText="ОГНОО" />
                   <CheckBox fx:id="const_cbx" maxHeight="20.0" minHeight="20.0" mnemonicParsing="false" prefHeight="20.0" />

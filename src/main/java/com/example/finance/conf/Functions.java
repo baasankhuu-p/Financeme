@@ -69,4 +69,17 @@ public class Functions {
         name.setStyle("-fx-background-color: rgba(255, 255, 255, 0.5); -fx-text-fill:rgba(192, 33, 33, 0.5); -fx-font-size: 18px ; -fx-font-weight: bold");
         name.setText(s_msg);
     }
+
+    /*
+    * Мэдээлэл оруулахад заримийг нь хоосон дамжуулахад алдаа гарах учир түүнийг хоосон үед хоосон утга буцаах хэрэгтэй
+    * */
+    public TextField issetTxtFnc(TextField txt){
+        if(txt.getText().equals("")){
+            txt.setText("0");
+        }
+        else{
+            txt.setText(txt.getText());
+        }
+        return txt;
+    }
 }

@@ -200,7 +200,7 @@ public class Database {
         String s_id = "select userid from users where userid = ? and name = ?";
         String s_data = "select * from users where userid = ?";
     }
-    public static void saveData(String[] row,int userid) {
+    public static int saveData(String[] row,int userid) {
         String createQuery = "insert into usersdata(" +
                 "ognoo, " +
                 "togtmol, " +
@@ -215,13 +215,14 @@ public class Database {
                 "zardal," +
                 "userid ) " +
                 "values(? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)";
+
         try (Connection con = DriverManager.getConnection(url, db, postgrePas)
         ) {
             PreparedStatement prepStmt;
             // Нэг грүппийг нэг л админ удирдах ёстой
             prepStmt = con.prepareStatement(createQuery);
             prepStmt.setDate(1, Date.valueOf(row[0]));
-            prepStmt.setByte(2, Byte.parseByte(row[1]));
+            prepStmt.setString(2, row[1]);
             prepStmt.setString(3, row[2]);
             prepStmt.setInt(4, Integer.parseInt(row[3]));
             prepStmt.setInt(5, Integer.parseInt(row[4]));
@@ -236,12 +237,13 @@ public class Database {
 
             //db-г хаах хэрэгтэй
             con.close();
-
             Database.getData(userid);
+            return 1;
         } catch (SQLException ex) {
             // Log-руу бичиж буй байдал
             Logger lgr = Logger.getLogger(Database.class.getName());
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
+            return 2;
         }
     }
     public static void updateData() {

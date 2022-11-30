@@ -71,7 +71,7 @@ public class SignUpController {
             String name = nameTxt.getText();
             name = name.substring(0, 1).toUpperCase() + name.substring(1, name.length()).toLowerCase();
 
-            int msgType = Database.signUpDB(
+            int msg = Database.signUpDB(
                     s_userType,
                     name,
                     passTxt.getText(),
@@ -80,7 +80,7 @@ public class SignUpController {
             );
 
             /* 1. Амжилттай, 2. phone эсвэл email давхцсан 3. Алдаа гарлаа*/
-            switch (msgType){
+            switch (msg){
                 case 1:
                     fnc.errMsg(msgLbl,"Админий эрхээр үүсгэх боломжгүй");
                     break;

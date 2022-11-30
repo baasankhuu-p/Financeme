@@ -109,7 +109,7 @@
 
 }
 
-.filtersCmbx, .filtersCmbx .list-cell{
+.filtersCmbx, .filtersCmbx .list-cell, .filtersCmbx .list-view {
     -fx-font-family: -fx-font-default-family;
     -fx-font-size: 13px;
     -fx-font-weight: 700;
@@ -152,7 +152,7 @@
     -fx-background-radius: 10px;
 }
 
-.profileCmbx, .profileCmbx .list-cell{
+.profileCmbx, .profileCmbx .list-cell, .profileCmbx .list-view {
     -fx-font-family: -fx-font-default-family;
     -fx-font-size: 10px;
     -fx-font-weight: 700;

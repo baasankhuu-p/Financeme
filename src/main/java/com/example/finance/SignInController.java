@@ -61,14 +61,14 @@ public class SignInController {
         if(!passTxt.getText().trim().equals("") && !nameTxt.getText().equals("")){
 
             //Хэрэглэгч амжилттай нэвтэрсэн эсэх
-            int i_msgType = Database.signInDB(
+            int msg = Database.signInDB(
                     s_userType,
                     nameTxt.getText(),
                     passTxt.getText()
             );
 
             // 1. Хэрэглэгч амжилттай нэвтэрлээ, 2. Мэдээлэл буруу байна 3. Алдаа гарлаа
-            switch (i_msgType){
+            switch (msg){
                 case 1:
                     //Хэрэглэгч амжилттай нэвтэрсэн бол хэрэглэгчийн дугаарыг буцаадаг байна
                     int i_uid = Database.returnUserId(
